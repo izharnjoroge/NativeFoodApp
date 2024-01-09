@@ -5,7 +5,7 @@ import React from 'react';
 import { StarIcon } from 'react-native-heroicons/solid';
 import { MapPinIcon } from 'react-native-heroicons/solid';
 
-export default function RestaurantCard({
+const RestaurantCard = ({
   id,
   url,
   title,
@@ -16,14 +16,14 @@ export default function RestaurantCard({
   dishes,
   long,
   lat,
-}) {
+}) => {
   return (
     <TouchableOpacity className="bg-white mr-3 shadow">
       <Image
         source={{
           uri: url,
         }}
-        className="h-36 w-64 rounded-sm"
+        className="h-36 w-64 rounded-xl"
       />
       <View className="px-3 pb-4">
         <Text className="font-bold text-ls pt-2">{title}</Text>
@@ -40,4 +40,6 @@ export default function RestaurantCard({
       </View>
     </TouchableOpacity>
   );
-}
+};
+
+export default RestaurantCard;

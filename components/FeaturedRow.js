@@ -5,13 +5,15 @@ import React from 'react';
 import { ArrowRightIcon } from 'react-native-heroicons/outline';
 import RestaurantCard from './RestaurantCard';
 
-export default function FeaturedRow({ title, description, id }) {
+const FeaturedRow = ({ title, description, id }) => {
   return (
     <View>
       <View className="mt-4 flex-row items-center justify-between px-4">
-        <Text className="font-bold text-lg">{title}</Text>
+        <View>
+          <Text className="font-bold text-lg">{title}</Text>
+          <Text className="text-xs text-gray-500">{description}</Text>
+        </View>
         <ArrowRightIcon color={'#00ccbb'} />
-        <Text className="text-xs text-gray-500 px-4">{description}</Text>
       </View>
       <ScrollView
         contentContainerStyle={{
@@ -61,4 +63,6 @@ export default function FeaturedRow({ title, description, id }) {
       </ScrollView>
     </View>
   );
-}
+};
+
+export default FeaturedRow;
