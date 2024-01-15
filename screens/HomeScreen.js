@@ -45,20 +45,25 @@ export default function HomeScreen() {
 
         <View className="flex-1">
           <Text className="font-bold text-gray-400 text-xs">Deliver Now!</Text>
-          <Text className="font-bold text-xl">
+          <Text className="font-bold text-xl items-center">
             Current Location
-            <ChevronDownIcon size={20} color="#00ccbb" />
+            <ChevronDownIcon size={10} color="#00ccbb" />
           </Text>
         </View>
-        <UserIcon size={35} color={'#00ccbb'} />
+        <UserIcon size={25} color={'#00ccbb'} />
       </View>
       {/* Search Field*/}
       <View className="flex-row space-x-2 items-center pb-2 mx-4">
-        <View className="flex-row space-x-2 flex-1  bg-gray-200 h-10 items-center ">
-          <MagnifyingGlassIcon size={30} color={'#00ccbb'} className="ml-4" />
+        <View className="flex-row  flex-1  bg-transparent items-center rounded-lg border border-[#00ccbb] p-2">
+          <MagnifyingGlassIcon
+            size={30}
+            color={'#00ccbb'}
+            className="space-x-2"
+          />
           <TextInput
             placeholder="Restaurants and cuisines"
             keyboardType="default"
+            placeholderTextColor={'#00ccbb'}
           />
         </View>
         <AdjustmentsVerticalIcon size={35} color={'#00ccbb'} />
@@ -70,15 +75,19 @@ export default function HomeScreen() {
         <Categories />
         {/*Popular Products*/}
 
-        <FeaturedRow title={'Popular'} description={'Popular Producs'} id={1} />
+        <FeaturedRow
+          title={'Popular'}
+          description={'Popular Products'}
+          id={1}
+        />
         <FeaturedRow
           title={'Offers Near You'}
-          description={'Popular Producs'}
+          description={'Popular Products'}
           id={2}
         />
         <FeaturedRow
           title={'Tasty Discounts'}
-          description={'Popular Producs'}
+          description={'Popular Products'}
           id={3}
         />
       </ScrollView>

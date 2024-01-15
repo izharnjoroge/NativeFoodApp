@@ -1,6 +1,8 @@
 import { View, Text, ScrollView } from 'react-native';
 import React from 'react';
 import CategoryCard from './CategoryCard';
+import { categories } from '../constants/constants';
+import category from '../foodapp/schemas/category';
 
 const Categories = () => {
   return (
@@ -13,10 +15,11 @@ const Categories = () => {
       showsHorizontalScrollIndicator={false}
     >
       {/*Category Card*/}
-      <CategoryCard url={'https://links.papareact.com/wru'} title={'testing'} />
-      <CategoryCard url={'https://links.papareact.com/wru'} title={'testing'} />
-      <CategoryCard url={'https://links.papareact.com/wru'} title={'testing'} />
-      <CategoryCard url={'https://links.papareact.com/wru'} title={'testing'} />
+      {categories.map((category) => (
+        <View key={category.id} className="space-x-5">
+          <CategoryCard url={category.image} title={category.name} />
+        </View>
+      ))}
     </ScrollView>
   );
 };
